@@ -10,7 +10,7 @@ public class obserwations {
             int cover = rand.nextInt(9);
             String textCover = Integer.toString(cover);
             System.out.println(textCover);
-            obserwationTab[1][i] = textCover;
+            obserwationTab[0][i] = textCover;
         }
     }
 
