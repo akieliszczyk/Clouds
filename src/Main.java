@@ -4,13 +4,10 @@
 public class Main {
     
     public static void main(String[] args) {
+        obserwations obserwations = new obserwations();
 
-
-
-
-
-
-
+        obserwations.generateRandomObserwationData(100);
+        obserwations.printTable(100);
     }
 }
 
