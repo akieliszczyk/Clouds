@@ -4,7 +4,7 @@
 public class Main {
     
     public static void main(String[] args) {
-        obserwations obserwations = new obserwations();
+        Obserwations obserwations = new Obserwations();
 
         obserwations.generateRandomObserwationData(100);
         obserwations.printTable(100);

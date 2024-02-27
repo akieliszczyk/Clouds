@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class cloudsParameters {
+public class CloudsParameters {
     Random rand = new Random();
     int skyCover[] = new int[10];
 

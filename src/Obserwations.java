@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class obserwations {
+public class Obserwations {
 
     private Random rand = new Random();
     private String obserwationTab[][] = new String[2][100];
