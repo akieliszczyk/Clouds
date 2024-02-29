@@ -3,17 +3,20 @@ import java.util.Random;
 public class Obserwations {
 
     private Random rand = new Random();
-    private String obserwationTab[][] = new String[4][100];
+    String obserwationTab[][] = new String[4][100];
     private String cloudColors[] = {"W", "G", "DG", "NB"};
 
     private String textCover;
     private String textHeight;
 
-    void generateRandomObserwationData(int row) {
+    String [][] generateRandomObserwationData(int row) {
         generateCoverData(row);
         generateCloudColorData(row);
         generateCloudHeighData(row);
+
+        return obserwationTab;
     }
+
 
     private void generateCoverData(int row) {
         for (int i = 0; i<row; i++) {

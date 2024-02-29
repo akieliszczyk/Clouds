@@ -1,48 +1,34 @@
 import java.util.Random;
 
 public class CloudsParameters {
-    Random rand = new Random();
-    int skyCover[] = new int[10];
+    String clasificationTab[][] = new String[4][100];
 
+    void classifySkyCover(Obserwations obserwations) {
+        obserwations.printTable(100);
 
-    void SkyCover() {
-        for (int i = 0; i < 10; i++) {
-            int a = rand.nextInt(9);
-            skyCover[i] = a;
-        }
+        for (int i = 0; i<100; i++) {
+            int skyCover = Integer.parseInt(obserwations.obserwationTab[0][i]);
+            if (skyCover < 1) {
+                clasificationTab[0][i] = "| Cloudless |";
 
-        for (int obs : skyCover) {
-            if (obs < 1) {
-                System.out.println(obs + ": Cloudless");
+            } else if (skyCover >= 1 & skyCover < 3) {
+                clasificationTab[0][i] = "| Slightly cloudy |";
 
-            } else if (obs >= 1 & obs < 3) {
-                System.out.println(obs + ": Slightly cloudy");
+            } else if (skyCover >= 3 & skyCover < 6) {
+                clasificationTab[0][i] = "| Moderately cloudy |";
 
-            } else if (obs >= 3 & obs < 6) {
-                System.out.println(obs + ": Moderately cloudy");
-
-            } else if (obs >= 6 & obs < 8) {
-                System.out.println(obs + ": Heavily cloudy");
+            } else if (skyCover >= 6 & skyCover < 8) {
+                clasificationTab[0][i] = "| Heavily cloudy |";
 
             } else {
-                System.out.println(obs + ": Completely cloudy");
+                clasificationTab[0][i] = "| Completely cloudy |";
             }
-
         }
     }
-    void SkyLevel(){
-        int level[] = new int[3];
 
-        for (int obs: level) {
-            if(obs < 2) {
-                System.out.println(obs + "km : Low level");
-            }
-            else if (obs >= 2 & obs < 7) {
-                System.out.println(obs + "km : Mid level");
-            }
-            else {
-                System.out.println(obs + "km : High level");
-            }
+    void printClasificationTable(int row) {
+        for (int i = 0; i<row; i++) {
+            System.out.println(clasificationTab[0][i] + " " + clasificationTab[1][i] + " " + clasificationTab[2][i] + " " + clasificationTab[3][i]);
         }
     }
 }
