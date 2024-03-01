@@ -1,13 +1,15 @@
-import java.util.Random;
 
 public class CloudsParameters {
     String clasificationTab[][] = new String[4][100];
 
-    void classifySkyCover(Obserwations obserwations) {
-        obserwations.printTable(100);
-
+    void ClassifyObservations(String [][] tab) {
+        classifySkyCover(tab);
+        classifyCloudColor(tab);
+        classifySkyLevel(tab);
+    }
+    void classifySkyCover(String [][] tab) {
         for (int i = 0; i<100; i++) {
-            int skyCover = Integer.parseInt(obserwations.obserwationTab[0][i]);
+            int skyCover = Integer.parseInt(tab[0][i]);
             if (skyCover < 1) {
                 clasificationTab[0][i] = "| Cloudless |";
 
@@ -25,7 +27,38 @@ public class CloudsParameters {
             }
         }
     }
+    void classifyCloudColor(String [][] tab) {
+        for (int i = 0; i<100; i++) {
+            String cloudColor = tab[1][i];
+            if (cloudColor == "W") {
+                clasificationTab[1][i] = "White";
+            } else if (cloudColor == "G") {
+                clasificationTab[1][i] = "Grey";
+            } else if (cloudColor == "DG") {
+                clasificationTab[1][i] = "Dark Grey";
+            } else if (cloudColor == "NB") {
+                clasificationTab[1][i] = "Navy Blue";
+            } else {
+                clasificationTab[1][i] = "UNKNOW";
+            }
+        }
+    }
+    void classifySkyLevel(String [][] tab) {
+        for (int i = 0; i < 100; i++) {
+            int skyLevel = Integer.parseInt(tab[2][i]);
 
+            if (skyLevel < 2) {
+                clasificationTab[2][i] = "| Low level |";
+                System.out.println(skyLevel + "km : Low level");
+            } else if (skyLevel >= 2 & skyLevel < 7) {
+                clasificationTab[2][i] = "| Mid level |";
+                System.out.println(skyLevel + "km : Mid level");
+            } else {
+                clasificationTab[2][i] = "| High level |";
+                System.out.println(skyLevel + "km : High level");
+            }
+        }
+    }
     void printClasificationTable(int row) {
         for (int i = 0; i<row; i++) {
             System.out.println(clasificationTab[0][i] + " " + clasificationTab[1][i] + " " + clasificationTab[2][i] + " " + clasificationTab[3][i]);
