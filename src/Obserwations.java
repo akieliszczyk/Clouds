@@ -3,8 +3,8 @@ import java.util.Random;
 public class Obserwations {
 
     private Random rand = new Random();
-    String obserwationTab[][] = new String[4][100];
-    private String cloudColors[] = {"W", "G", "DG", "NB"};
+    String obserwationTab[][] = new String[3][100];
+    private String cloudColors[] = {"W", "G", "DG"};
 
     private String textCover;
     private String textHeight;
@@ -27,7 +27,7 @@ public class Obserwations {
     }
     private void generateCloudColorData(int row) {
         for (int i = 0; i < row; i++) {
-            int color = rand.nextInt(4);
+            int color = rand.nextInt(3);
             obserwationTab[1][i] = cloudColors[color];
         }
     }
@@ -40,7 +40,7 @@ public class Obserwations {
     }
     void printTable(int row) {
         for (int i = 0; i<row; i++) {
-            System.out.println(obserwationTab[0][i] + " " + obserwationTab[1][i] + " " + obserwationTab[2][i] + " " + obserwationTab[3][i]);
+            System.out.println(obserwationTab[0][i] + " " + obserwationTab[1][i] + " " + obserwationTab[2][i]);
 
         }
     }

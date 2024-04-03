@@ -36,9 +36,7 @@ public class CloudsParameters {
                 clasificationTab[1][i] = "Grey";
             } else if (cloudColor == "DG") {
                 clasificationTab[1][i] = "Dark Grey";
-            } else if (cloudColor == "NB") {
-                clasificationTab[1][i] = "Navy Blue";
-            } else {
+            }  else {
                 clasificationTab[1][i] = "UNKNOW";
             }
         }
