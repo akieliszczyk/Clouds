@@ -1,6 +1,8 @@
 
 public class CloudsParameters {
-    String clasificationTab[][] = new String[4][100];
+
+    private int row = 100;
+    String clasificationTab[][] = new String[4][row];
 
     void ClassifyObservations(String [][] tab) {
         classifySkyCover(tab);
@@ -8,7 +10,7 @@ public class CloudsParameters {
         classifySkyLevel(tab);
     }
     void classifySkyCover(String [][] tab) {
-        for (int i = 0; i<100; i++) {
+        for (int i = 0; i < row; i++) {
             int skyCover = Integer.parseInt(tab[0][i]);
             if (skyCover < 1) {
                 clasificationTab[0][i] = "Cloudless";
@@ -28,7 +30,7 @@ public class CloudsParameters {
         }
     }
     void classifyCloudColor(String [][] tab) {
-        for (int i = 0; i<100; i++) {
+        for (int i = 0; i < row; i++) {
             String cloudColor = tab[1][i];
             if (cloudColor == "W") {
                 clasificationTab[1][i] = "White";
@@ -42,7 +44,7 @@ public class CloudsParameters {
         }
     }
     void classifySkyLevel(String [][] tab) {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < row; i++) {
             int skyLevel = Integer.parseInt(tab[2][i]);
 
             if (skyLevel < 2) {
@@ -55,7 +57,7 @@ public class CloudsParameters {
         }
     }
     void printClasificationTable(int row) {
-        for (int i = 0; i<row; i++) {
+        for (int i = 0; i < row; i++) {
             System.out.println(clasificationTab[0][i] + " " + clasificationTab[1][i] + " " + clasificationTab[2][i] + " " + clasificationTab[3][i]);
         }
     }

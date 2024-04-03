@@ -3,7 +3,8 @@ import java.util.Random;
 public class Obserwations {
 
     private Random rand = new Random();
-    String obserwationTab[][] = new String[3][100];
+    private int row = 100;
+    String obserwationTab[][] = new String[3][row];
     private String cloudColors[] = {"W", "G", "DG"};
 
     private String textCover;
