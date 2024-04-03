@@ -11,19 +11,19 @@ public class CloudsParameters {
         for (int i = 0; i<100; i++) {
             int skyCover = Integer.parseInt(tab[0][i]);
             if (skyCover < 1) {
-                clasificationTab[0][i] = "| Cloudless |";
+                clasificationTab[0][i] = "Cloudless";
 
             } else if (skyCover >= 1 & skyCover < 3) {
-                clasificationTab[0][i] = "| Slightly cloudy |";
+                clasificationTab[0][i] = "Slightly cloudy";
 
             } else if (skyCover >= 3 & skyCover < 6) {
-                clasificationTab[0][i] = "| Moderately cloudy |";
+                clasificationTab[0][i] = "Moderately cloudy";
 
             } else if (skyCover >= 6 & skyCover < 8) {
-                clasificationTab[0][i] = "| Heavily cloudy |";
+                clasificationTab[0][i] = "Heavily cloudy";
 
             } else {
-                clasificationTab[0][i] = "| Completely cloudy |";
+                clasificationTab[0][i] = "Completely cloudy";
             }
         }
     }
@@ -46,11 +46,11 @@ public class CloudsParameters {
             int skyLevel = Integer.parseInt(tab[2][i]);
 
             if (skyLevel < 2) {
-                clasificationTab[2][i] = "| Low level |";
+                clasificationTab[2][i] = "Low level";
             } else if (skyLevel >= 2 & skyLevel < 7) {
-                clasificationTab[2][i] = "| Mid level |";
+                clasificationTab[2][i] = "Mid level";
             } else {
-                clasificationTab[2][i] = "| High level |";
+                clasificationTab[2][i] = "High level";
             }
         }
     }
