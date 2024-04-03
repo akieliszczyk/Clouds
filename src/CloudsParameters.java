@@ -47,13 +47,10 @@ public class CloudsParameters {
 
             if (skyLevel < 2) {
                 clasificationTab[2][i] = "| Low level |";
-                System.out.println(skyLevel + "km : Low level");
             } else if (skyLevel >= 2 & skyLevel < 7) {
                 clasificationTab[2][i] = "| Mid level |";
-                System.out.println(skyLevel + "km : Mid level");
             } else {
                 clasificationTab[2][i] = "| High level |";
-                System.out.println(skyLevel + "km : High level");
             }
         }
     }
