@@ -28,23 +28,32 @@ public class Obserwations {
     }
     private void generateCloudColorData(int row) {
         for (int i = 0; i < row; i++) {
-            int color = rand.nextInt(3);
-            obserwationTab[1][i] = cloudColors[color];
+            if (obserwationTab[0][i].equals("0")) {
+                obserwationTab[1][i] = null;
+            } else {
+                int color = rand.nextInt(3);
+                obserwationTab[1][i] = cloudColors[color];
+            }
         }
     }
     private void generateCloudHeighData(int row) {
         for(int i=0; i < row; i++) {
-            if (obserwationTab[1][i] == "DG" || obserwationTab[1][i] == "G") {
-                int height = rand.nextInt(6);
-                textHeight = Integer.toString(height);
-                obserwationTab[2][i] = textHeight;
+            if (obserwationTab[0][i].equals("0")) {
+                obserwationTab[2][i] = null;
             } else {
-                int height = rand.nextInt(13);
-                textHeight = Integer.toString(height);
-                obserwationTab[2][i] = textHeight;
+                if (obserwationTab[1][i] == "DG" || obserwationTab[1][i] == "G") {
+                    int height = rand.nextInt(6);
+                    textHeight = Integer.toString(height);
+                    obserwationTab[2][i] = textHeight;
+                } else {
+                    int height = rand.nextInt(13);
+                    textHeight = Integer.toString(height);
+                    obserwationTab[2][i] = textHeight;
+                }
             }
         }
     }
+
     void printTable(int row) {
         for (int i = 0; i<row; i++) {
             System.out.println(obserwationTab[0][i] + " " + obserwationTab[1][i] + " " + obserwationTab[2][i]);
