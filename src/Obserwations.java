@@ -34,9 +34,15 @@ public class Obserwations {
     }
     private void generateCloudHeighData(int row) {
         for(int i=0; i < row; i++) {
-            int height = rand.nextInt(13);
-            textHeight = Integer.toString(height);
-            obserwationTab[2][i] = textHeight;
+            if (obserwationTab[1][i] == "DG" || obserwationTab[1][i] == "G") {
+                int height = rand.nextInt(6);
+                textHeight = Integer.toString(height);
+                obserwationTab[2][i] = textHeight;
+            } else {
+                int height = rand.nextInt(13);
+                textHeight = Integer.toString(height);
+                obserwationTab[2][i] = textHeight;
+            }
         }
     }
     void printTable(int row) {
