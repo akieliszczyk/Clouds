@@ -29,7 +29,7 @@ public class Obserwations {
     private void generateCloudColorData(int row) {
         for (int i = 0; i < row; i++) {
             if (obserwationTab[0][i].equals("0")) {
-                obserwationTab[1][i] = null;
+                obserwationTab[1][i] = "---";
             } else {
                 int color = rand.nextInt(3);
                 obserwationTab[1][i] = cloudColors[color];
@@ -39,7 +39,7 @@ public class Obserwations {
     private void generateCloudHeighData(int row) {
         for(int i=0; i < row; i++) {
             if (obserwationTab[0][i].equals("0")) {
-                obserwationTab[2][i] = null;
+                obserwationTab[2][i] = "---";
             } else {
                 if (obserwationTab[1][i] == "DG" || obserwationTab[1][i] == "G") {
                     int height = rand.nextInt(6);
