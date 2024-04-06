@@ -1,7 +1,7 @@
 package inputdata;
 
 public class ProgramData {
-    private String randomObservationData[][] = new String[3][100];
+    private final String randomObservationData[][] = new String[3][100];
 
     private final String cloudColors[] = {"W", "G", "DG"};
 

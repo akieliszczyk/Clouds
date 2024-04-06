@@ -1,10 +1,15 @@
+import inputdata.ProgramData;
 
 public class CloudsParameters {
 
+    ProgramData programData = new ProgramData();
     private int row = 100;
+    String [][] table = programData.getRandomObservationData();
     String clasificationTab[][] = new String[4][row];
 
-    void ClassifyObservations(String [][] tab) {
+    void classifyObservations(String [][] tab) {
+
+        System.out.println(table[0][1]);
         classifySkyCover(tab);
         classifyCloudColor(tab);
         classifySkyLevel(tab);

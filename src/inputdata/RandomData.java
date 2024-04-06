@@ -5,7 +5,7 @@ import java.util.Random;
 public class RandomData {
 
     ProgramData programData = new ProgramData();
-    private String [][] randomObservationTab = programData.getRandomObservationData();
+    private final String [][] randomObservationTab = programData.getRandomObservationData();
     private String cloudColors[] = programData.getCloudColors();
     private Random rand = new Random();
 
@@ -54,10 +54,10 @@ public class RandomData {
         }
     }
 
-    public void printTable(int row) {
+    public void printTable(int row, String [][] tab) {
+        String [][] data = programData.getRandomObservationData();
         for (int i = 0; i<row; i++) {
-            System.out.println(randomObservationTab[0][i] + " " + randomObservationTab[1][i] + " " + randomObservationTab[2][i]);
-
+            System.out.println(data[0][i] + " " + data[1][i] + " " + data[2][i]);
         }
     }
 }
